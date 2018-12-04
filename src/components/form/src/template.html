@@ -1,0 +1,24 @@
+<div class="form" :class="{'form-compact': showCompact, 'form-not-valid': !valid, 'form-autosave': doAutosave != null}">
+
+	<div class="form-header">
+		<h1>{{data.headline}}</h1>
+		<p class="form-error">{{data.error}}</p>
+	</div>
+	<div class="form-inputs">
+		<template v-for="(field, index) in data.fields">
+			<form-input-text :data="field" v-if="field.type === 'text'" v-on:update="onUpdate"></form-input-text>
+			<form-input-img :data="field" v-if="field.type === 'img'" v-on:update="onUpdate"></form-input-img>
+			<form-input-textarea :data="field" v-if="field.type === 'textarea'" v-on:update="onUpdate"></form-input-textarea>
+			<form-input-radio :data="field" v-if="field.type === 'radio'" v-on:update="onUpdate"></form-input-radio>
+			<form-input-checkbox :data="field" v-if="field.type === 'checkbox'" v-on:update="onUpdate"></form-input-checkbox>
+			<form-input-select :data="field" v-if="field.type === 'select'" v-on:update="onUpdate"></form-input-select>
+			<form-input-label :data="field" v-if="field.type === 'label'" v-on:update="onUpdate"></form-input-label>
+		</template>
+	</div>
+	<div class="form-footer">
+		<template v-for="(button, index) in data.buttons">
+			<button-confirm :data="button" :disabled="!valid" v-if="button.type === 'confirm'"></button-confirm>
+		</template>
+	</div>
+
+</div>

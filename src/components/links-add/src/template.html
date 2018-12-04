@@ -1,0 +1,13 @@
+<div class="links-add">
+	<div class="block">
+		<h2>Přidat vazbu</h2>
+	</div>
+	<div class="block">
+		<h3>Načíst seznam:</h3>
+		<show-form :data="formSelectList" compact></show-form>
+	</div>
+	<div class="block" v-if="loadedList">
+		<h3>Nastavení vazby:</h3>
+		<show-form :data="formCreateLink" compact></show-form>
+	</div>
+</div>

@@ -1,0 +1,60 @@
+.form-input-text {
+	padding: .5rem 2rem .5rem .5rem;
+	width: 100%;
+	max-width: 100%;
+	font-size: 1rem;
+	border: none;
+	border-bottom: 1px solid #ccc;
+	background: rgba(#11457e, .05);
+
+	&:focus {
+		border-bottom-color: #11457e;
+		color: #11457e;
+		outline: none;
+	}
+
+	&[disabled] {
+		background: none;
+	}
+}
+
+.form-input-header {
+	font-weight: bold;
+	margin-bottom: .5em;
+}
+
+.form-input-error {
+	font-weight: bold;
+	font-size: 11px;
+	margin-top: .25rem;
+	line-height: 14px;
+	height: 14px;
+}
+
+.form-input-content {
+	position: relative;
+}
+
+.form-input-content-switch {
+	position: absolute;
+	right: .5em;
+	top: .7em;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+
+	@media (min-width: 34rem) {
+		max-width: 30rem;
+	}
+}
+
+.form-compact .form-input-header {
+	display: none;
+}
+
+.form-input-dropzone {
+	margin-bottom: 1rem;
+}

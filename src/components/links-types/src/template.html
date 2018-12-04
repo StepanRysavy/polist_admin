@@ -1,0 +1,21 @@
+<div class="links-types">
+	<show-expandable>
+		<div class="block" slot="header">
+			<h2>Správce vazeb</h2>
+		</div>
+		<template slot="content">
+			<div class="block">
+				<h3>Existující</h3>
+				<ul class="list list-linear">
+					<li v-for="(item, index) in $store.state.link_types">
+						{{ item.name }}
+					</li>
+				</ul>
+			</div>
+			<div class="block">
+				<h3>Přidat druh vazby</h3>
+				<show-form :data="formLinkTypeAdd"></show-form>
+			</div>
+		</template>
+	</show-expandable>
+</div>

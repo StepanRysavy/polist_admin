@@ -1,0 +1,15 @@
+<div class="form-input-text">
+	<div class="form-input-header">
+		{{data.label}} {{data.required ? '*' : ''}}
+	</div>
+	<div class="form-input-content">
+		<textarea :type="htmlType"
+			v-bind:value="data.value"
+        	v-on="inputListeners"
+        	:placeholder="data.placeholder"
+        ></textarea>
+	</div>
+	<div class="form-input-error">
+		<show-validation :value="value" :validators="data.validate" :force="iterate" @validated="onValidation"></show-validation>
+	</div>
+</div>

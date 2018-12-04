@@ -1,0 +1,16 @@
+<div class="layout-list">
+	<h1>{{ $store.state.node_types.find(t => t.id === Number(id)).name }}</h1>
+	<div class="block">
+		<h3>Seznam</h3>
+		<ul class="list">
+			<li v-for="(item, index) in list">
+				<router-link :to="'/detail/' + id + '/' + item.id">{{ item.meta_title }}</router-link>
+			</li>
+		</ul>
+	</div>
+	<div class="block">
+		<h3>Akce</h3>
+		<button @click="add">Přidat</button>
+		<router-link to="/admin" class="button button-secondary">Zpět</router-link>
+	</div>
+</div>

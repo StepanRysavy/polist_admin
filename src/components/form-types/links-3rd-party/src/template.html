@@ -1,0 +1,26 @@
+<div class="form">
+	<template v-if="list && list.length > 0">
+		<h4>Přiřazené odkazy</h4>
+		<table class="table-list">
+			<tr v-for="(item, index) in list">
+				<td>
+					<button @click="up(index)"  :disabled="index === 0">&uarr;</button>
+					<button @click="down(index)" :disabled="index === list.length - 1">&darr;</button>
+				</td>
+				<td>
+					{{ item.site }}
+				</td>
+				<td>
+					<a :href="item.url" target="_blank">{{ item.url }}</a>
+				</td>
+				<td class="table-action">
+					<button @click="remove(index)" class="red">&times;</button>
+				</td>
+			</tr>
+		</table>
+	</template>
+	<show-expandable>
+		<h4 slot="header">Přidat nový odkaz</h4>
+		<show-form slot="content" :data="form" compact></show-form>
+	</show-expandable>
+</div>

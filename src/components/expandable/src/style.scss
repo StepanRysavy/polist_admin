@@ -1,0 +1,25 @@
+.expandable-content {
+  display: none;
+}
+
+.expanded .expandable-content {
+  display: block;
+}
+
+.expandable-header {
+  &:hover {
+    cursor: pointer;
+  }
+
+  h4 {
+  	text-decoration: none;
+  	border-bottom: 1px solid #ddd;
+    display: inline-block;
+    margin: 0;
+    color: #11457e;
+  }
+}
+
+.expandable.expanded h4 {
+  margin-bottom: 2rem;
+}

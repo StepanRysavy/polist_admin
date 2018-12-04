@@ -1,0 +1,7 @@
+button {
+  padding: .1em .3em;
+}
+
+.expandable:not(:first-child) {
+  margin-top: 2rem;
+}

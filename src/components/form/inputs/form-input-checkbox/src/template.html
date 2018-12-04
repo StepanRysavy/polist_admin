@@ -1,0 +1,8 @@
+<div class="form-input-checkbox">
+	<div class="form-input-content">
+		<input type="checkbox" v-model="checked" v-on="inputListeners"> {{data.label}} {{data.required ? '*' : ''}}
+	</div>
+	<div class="form-input-error">
+		<show-validation :value="value" :validators="data.validate" :force="iterate" @validated="onValidation"></show-validation>
+	</div>
+</div>

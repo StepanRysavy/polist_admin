@@ -1,0 +1,15 @@
+<div class="layout-homepage">
+	<h1>Správa Polist</h1>
+	<div class="block">
+		<h3>Seznamy</h3>
+		<ul class="list">
+			<li v-for="(item, index) in $store.state.node_types">
+				<router-link :to="'list/' + item.id">{{ item.name }}</router-link>
+			</li>
+		</ul>
+	</div>
+	<show-expandable class="block">
+		<h4 slot="header">Přidat seznam</h4>
+		<show-form slot="content" :data="formNodeTypeAdd" compact></show-form>
+	</show-expandable>
+</div>

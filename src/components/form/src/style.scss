@@ -1,0 +1,28 @@
+.form-inputs > div + div {
+	margin-top: 1rem;
+}
+
+.form-compact .form-inputs > div + div {
+	margin-top: .25rem;
+}
+
+.form-footer {
+}
+
+.form {
+	position: relative;
+}
+
+.form-not-valid:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -1rem;
+	bottom: 0;
+	border-right: 2px solid #f00;
+	width: 0;
+}
+
+.form-autosave .button-confirm {
+	display: none;
+}

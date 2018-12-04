@@ -1,0 +1,13 @@
+<div class="form-input-select">
+	<div class="form-input-header">
+		{{data.label}} {{data.required ? '*' : ''}}
+	</div>
+	<div class="form-input-content">
+		<select v-model="data.value" v-on="inputListeners">
+			<option v-for="(option, index) in data.options" :value="option.value" :disabled="option.disabled" :selected="option.selected">{{option.label}}</option>
+		</select>
+	</div>
+	<div class="form-input-error">
+		<show-validation :value="value" :validators="data.validate" :force="iterate" @validated="onValidation"></show-validation>
+	</div>
+</div>

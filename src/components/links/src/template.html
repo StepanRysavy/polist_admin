@@ -1,0 +1,47 @@
+<div class="links" v-if="links">
+	<div class="block">
+		<h2>Vazby</h2>
+	</div>
+	<div class="block" v-for="(item, index) in $store.state.link_types" v-if="links.results.filter(o => o.id_link_type === item.id).length > 0">
+		<h3>{{ item.name }}</h3>
+		<ul class="list">
+			<li v-for="(link, index2) in links.results.filter(o => o.id_link_type === item.id)">
+				<div>
+					<b v-if="link.id_node_B != Number(of)">
+						<router-link :to="'/detail/' + links.meta.find(o => o.id === link.id_node_B).id_node_type + '/' + link.id_node_B">
+							{{ links.meta.find(o => o.id === link.id_node_B).meta_title }}
+						</router-link>
+					</b>
+					<b v-if="link.id_node_A != Number(of)">
+						<router-link :to="'/detail/' + links.meta.find(o => o.id === link.id_node_A).id_node_type + '/' + link.id_node_A">
+							{{ links.meta.find(o => o.id === link.id_node_A).meta_title }}
+						</router-link>
+					</b>
+				</div>
+				<div>
+					<span>
+						{{ beautifyDate(new Date(link.time_from)) }}
+					</span>
+					<span>
+						&rarr;
+					</span>
+					<span v-if="link.time_to != 9999999999999">
+						{{ beautifyDate(new Date(link.time_to)) }}
+					</span>
+					<span v-if="link.time_to === 9999999999999">
+						neurčito
+					</span>
+					<span>
+						&middot;
+					</span>
+					<span>
+						<button @click="remove(link)">&times;</button>
+					</span>
+				</div>
+				<div>
+					<div v-html="JSON.parse(link.json).note || ''"></div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>

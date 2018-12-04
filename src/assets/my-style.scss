@@ -1,0 +1,195 @@
+#app{
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+}
+
+a, .is-link {
+	color: #11457e;
+	text-decoration: none;
+	border-bottom: 1px solid #ddd;
+
+	transition: border-bottom-color .3s;
+
+	&:hover {
+		cursor: pointer;
+		border-bottom-color: #11457e;
+		cursor: pointer;
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 100%;
+	line-height: 1.5;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+button, .button {
+
+	position: static;
+	display: inline-block;
+	top: 0;
+	right: 0;
+	// border: 1px solid #eee;
+	font-size: 1rem;
+	// text-transform: uppercase;
+	// box-shadow: 0 1px 1px rgba(0,0,0,.25);
+	border-radius: .3em;
+	background: #11457e;
+	color: #fff;
+	font-weight: bold;
+	padding: .25em 1em;
+  font-family: Avenir, Helvetica, Arial;
+
+	&:hover {
+		cursor: pointer;
+		// border: 1px solid #ddd;
+		// box-shadow: 0 1px 1px rgba(0,0,0,.33);
+		background: darken(#11457e, 15%);
+	}
+
+	&.button-secondary {
+		background: #f4f4f4;
+		color: #444;
+
+		&:hover {
+			background: #fafafa;
+			color: #222;
+		}
+	}
+
+	&[disabled] {
+		color: #ccc;
+		border: 1px solid rgba(#fff, .1);
+		background: #fff;
+    cursor: not-allowed;
+	}
+
+}
+
+h1, h2, h3 {
+	margin: 0;
+	line-height: 1.1;
+}
+
+p {
+	margin: 0;
+}
+
+ul, li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.list-linear li {
+  display: inline-block;
+
+  + li {
+    margin-left: 1rem;
+  }
+}
+
+h1 a {
+	color: #D7141A;
+	font-size: 1.33rem;
+
+	&:hover {
+		border-bottom-color: #D7141A;
+	}
+}
+
+small {
+	font-weight: normal;
+	font-size: .8rem;
+	color: #aaa;
+}
+
+.cross {
+	margin-top: 3rem;
+}
+
+.dimm {
+	color: #ccc;
+	font-weight: normal;
+}
+
+.red {
+	color: #D7141A;
+}
+
+a.red:hover {
+	border-color: #D7141A;
+}
+
+button.red {
+	background: #D7141A;
+  color: #fff;
+
+  &:hover {
+    background: darken(#D7141A, 5%);
+  }
+}
+
+hr {
+	height: 1px;
+	display: block;
+	margin: 3rem 0
+}
+
+.icon span {
+	width: 3rem;
+}
+
+.icon > a img {
+	opacity: 1;
+	// transition: all .75s;
+}
+
+table:hover tr:not(:hover) .icon > a img {
+	opacity: .25;
+}
+
+.loading {
+	text-align: center;
+	padding: 10rem 0;
+	padding: 33vh 0;
+}
+
+.block {
+	position: relative;
+}
+
+.content {
+	margin: auto;
+	max-width: 60rem;
+}
+
+.dropzone-holder .vue-dropzone {
+  border: none;
+}
+
+@media (max-width: 40rem) {
+  .table-list {
+    &, tr, td, th {
+      display: block;
+    }
+
+    position: relative;
+  }
+
+  .table-action {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}

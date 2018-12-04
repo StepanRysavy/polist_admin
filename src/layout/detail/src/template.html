@@ -1,0 +1,41 @@
+<div class="layout-detail">
+	<div class="sticky" v-if="data">
+		<div class="content">
+			<h1>{{ data.meta_title }}</h1>
+			<button :disabled="updated < 3" @click="save">Uložit</button>
+			<router-link :to="'/list/' + type" class="button button-secondary">Zpět</router-link>
+		</div>
+	</div>
+	<div class="content" v-if="data" :style="{paddingTop: stickyHeight + 'px'}">
+		<div class="block">
+			<h3>Hash</h3>
+			<form-hash :data="data" :updated="updated" @updated="setUpdated"></form-hash>
+		</div>
+		<div class="block">
+			<h3>Meta</h3>
+			<form-meta :data="data" :updated="updated" @updated="setUpdated"></form-meta>
+		</div>
+		<div class="block">
+			<h2>Data</h2>
+		</div>
+		<div class="block" v-if="type != 'general'">
+			<h3>Sociální sítě</h3>
+			<form-social :data="data" :updated="updated" @updated="setUpdated"></form-social>
+		</div>
+		<div class="block" v-if="type != 'general'">
+			<h3>Odkazy</h3>
+			<form-links :data="data" :updated="updated" @updated="setUpdated"></form-links>
+		</div>
+		<div class="block" v-if="type != 'general'">
+			<h3>Odkazy třetích stran</h3>
+			<form-links-3rd-party :data="data" :updated="updated" @updated="setUpdated"></form-links-3rd-party>
+		</div>
+		<div class="block">
+			<h3>Poznámky</h3>
+			<form-notes :data="data" :updated="updated" @updated="setUpdated"></form-notes>
+		</div>
+		<show-links :of="id" :newLink="newLinkCreated"></show-links>
+		<show-links-add :of="id" @created="link_created"></show-links-add>
+		<show-links-types></show-links-types>
+	</div>
+</div>

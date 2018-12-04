@@ -1,0 +1,8 @@
+<div class="expandable" :class="{'expanded': exp}">
+	<div class="expandable-header" @click="toggle">
+		<slot name="header"></slot>
+	</div>
+	<div class="expandable-content">
+		<slot name="content"></slot>
+	</div>
+</div>

@@ -1,0 +1,25 @@
+<div class="form-input-img">
+	<div class="form-input-header">
+		{{data.label}} {{data.required ? '*' : ''}}
+	</div>
+	<div class="form-input-dropzone">
+		<upload-dropzone v-on:upload="onDropzone"></upload-dropzone>
+	</div>
+	<div class="form-input-content">
+		<input
+			type="url"
+			v-bind:value="data.value"
+    	v-on="inputListeners"
+    	:placeholder="data.placeholder"
+			:disabled="!editable"
+			class="form-input-text"
+		>
+		<input type="checkbox" v-model="editable" class="form-input-content-switch">
+	</div>
+	<div class="form-input-error">
+		<show-validation :value="value" :validators="data.validate" :force="iterate" :validateOnlyIfNotEmpty="data.validateOnlyIfNotEmpty" @validated="onValidation"></show-validation>
+	</div>
+	<div class="form-preview" v-if="data.valid === true && data.value != ''">
+		<img :src="data.value">
+	</div>
+</div>
