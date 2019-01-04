@@ -39,7 +39,9 @@ o.computed.form = function () {
 				type: 'select',
 				options: [
 					{value: 'demagog', label: 'Demagog'},
-					{value: 'hlidac_statu', label: 'Hlídač státu'}
+					{value: 'hlidac_statu', label: 'Hlídač státu'},
+					{value: 'wiki', label: 'Wikipedia'},
+					{value: 'ep', label: 'Stránky Evropského parlamentu'}
 				]
 			},
 			{

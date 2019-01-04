@@ -41,13 +41,13 @@ o.computed.form = function () {
 					{value: 'facebook', label: 'facebook'},
 					{value: 'instagram', label: 'instagram'},
 					{value: 'youtube', label: 'youtube'},
-					{value: 'twitter', label: 'twitter'}
+					{value: 'twitter', label: 'twitter'},
+					{value: 'linkedin', label: 'linkedin'}
 				]
 			},
 			{
 				name: 'label',
 				label: 'Popis',
-				required: true,
 				value: ''
 			},
 			{
